@@ -57,6 +57,7 @@ class InteractiveRecord
     keys = hash.keys
     values = hash.values
     sql = "SELECT * FROM #{self.table_name} WHERE #{keys[0]} = '#{values[0]}' AND #{keys[1]} = '#{values[1]}'"
+    binding.pry
     DB[:conn].execute(sql)
   end
 
