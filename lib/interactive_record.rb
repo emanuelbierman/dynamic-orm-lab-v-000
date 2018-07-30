@@ -55,7 +55,7 @@ class InteractiveRecord
 
   def self.find_by(hash)
     keys = hash.keys
-    values =
+    values = hash.values
     sql = "SELECT * FROM #{self.table_name} WHERE #{keys} = '#{}' AND #{} = '#{}'"
     DB[:conn].execute(sql)
   end
