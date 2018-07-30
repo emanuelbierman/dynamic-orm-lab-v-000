@@ -54,10 +54,8 @@ class InteractiveRecord
     DB[:conn].execute(sql)
   end
 
-  def self.find_by(attribute)
-    keys = hash.keys
-    values = hash.values
-    sql = "SELECT * FROM #{self.table_name} WHERE #{keys[0]} = '#{values[0]}' AND #{keys[1]} = '#{values[1]}'"
+  def self.find_by(attr)
+    sql = "SELECT * FROM #{self.table_name} WHERE #{attr} = '#{values[0]}''"
     binding.pry
     DB[:conn].execute(sql)
   end
